@@ -1,4 +1,4 @@
-package com.example.loveb.securemessenger;
+package com.example.alnkrt.securesandesh;
 
 import android.content.Intent;
 import android.speech.RecognizerIntent;
@@ -48,7 +48,7 @@ public class DES extends AppCompatActivity {
     SecretKey key;
     String myEncKey="This is Key";
 
-    String dummy="welcome to the world of java";
+    String dummy="welcome to SecureSandesh";
     String ans="";
 
     @Override
@@ -57,7 +57,6 @@ public class DES extends AppCompatActivity {
         setContentView(R.layout.activity_des);
 
         input_text = (EditText) findViewById(R.id.input_text);
-        //  password_text = (EditText) findViewById(R.id.password_text);
         output_text = (TextView) findViewById(R.id.output_text);
         enc = (Button) findViewById(R.id.encrypt);
         dec = (Button) findViewById(R.id.decrypt);
@@ -103,11 +102,9 @@ public class DES extends AppCompatActivity {
 
                 String temp=input_text.getText().toString();
                 ans=encrypt(temp);
-                Log.d("NIKHIL", "encrypt key:" + ans);
                 output_text.setText(ans);
                /* String sans=ans;
-                sans=decrypt(sans);
-                Log.d("NIKHIL","decrypt key: "+sans);*/
+                sans=decrypt(sans);*/
             }
         });
 
