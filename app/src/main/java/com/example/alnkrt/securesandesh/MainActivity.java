@@ -1,4 +1,4 @@
-package com.example.loveb.securemessenger;
+package com.example.alnkrt.securesandesh;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
