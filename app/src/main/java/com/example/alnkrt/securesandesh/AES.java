@@ -1,4 +1,4 @@
-package com.example.loveb.securemessenger;
+package com.example.alnkrt.securesandesh;
 
 import android.content.Intent;
 import android.speech.RecognizerIntent;
@@ -51,10 +51,9 @@ public class AES extends AppCompatActivity {
             public void onClick(View view) {
                 try {
                     inptext = input_text.getText().toString();
-                    //  pwdtext = password_text.getText().toString();
                     outputstring = encrypt(inptext, pwdtext);
                     output_text.setText(outputstring);
-                    //make a toast her e to say encypted successfully
+                    //make a toast here to say encypted successfully
                   //  Toast.makeText(MainActivity.this,"Encrypted Successfully!!!",Toast.LENGTH_SHORT).show();
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -72,7 +71,7 @@ public class AES extends AppCompatActivity {
                     outputstring = decrypt(inptext, pwdtext);// outputstring was there in place of inptext
 
                     output_text.setText(outputstring);
-                    //make a toast her e to say deccypted successfully
+                    //make a toast here to say deccypted successfully
                   //  Toast.makeText(this,"decrypted Successfully!!!",Toast.LENGTH_SHORT).show();
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -131,7 +130,6 @@ public class AES extends AppCompatActivity {
 
     private String encrypt(String data, String password_text) throws Exception {
         SecretKeySpec key = generateKey(password_text);
-        //Log.d("NIKHIL", "encrypt key:" + key.toString());
         Cipher c = Cipher.getInstance("AES/ECB/PKCS5Padding");//creating an object
         c.init(Cipher.ENCRYPT_MODE, key);//initialisation
         byte[] encVal = c.doFinal(data.getBytes("UTF-8"));
@@ -148,10 +146,9 @@ public class AES extends AppCompatActivity {
 
     private String decrypt(String data, String password_text) throws Exception {
         SecretKeySpec key = generateKey(password_text);
-       // Log.d("NIKHIL", "encrypt key:" + key.toString());
         Cipher c = Cipher.getInstance("AES/ECB/PKCS5Padding");
         c.init(Cipher.DECRYPT_MODE, key);
-        byte[] decodedvalue = Base64.decode(data, Base64.DEFAULT);//pehle vo base64 me encoded tha, to decode to karna padega na
+        byte[] decodedvalue = Base64.decode(data, Base64.DEFAULT);//pehle vo base64 me encoded tha, to decode to karna padega 
         byte[] decvalue = c.doFinal(decodedvalue);//final decoding operation
         String decryptedvalue = new String(decvalue, "UTF-8");//converting bytes into string
         return decryptedvalue;
@@ -160,7 +157,7 @@ public class AES extends AppCompatActivity {
     private SecretKeySpec generateKey(String password) throws Exception {
         final MessageDigest digest = MessageDigest.getInstance("SHA-256");//for using hash function SHA-256
         byte[] bytes = password.getBytes("UTF-8");
-        digest.update(bytes, 0, bytes.length);//process kr bytes array ko
+        digest.update(bytes, 0, bytes.length);//process  bytes array 
         byte[] key = digest.digest();////Completes the hash computation by performing final operations such as padding.
         SecretKeySpec secretKeySpec = new SecretKeySpec(key, "AES");
         return secretKeySpec;
