@@ -1,4 +1,4 @@
-package com.example.loveb.securemessenger;
+package com.example.alnkrt.securesandesh;
 
 import android.content.Intent;
 import android.speech.RecognizerIntent;
@@ -63,7 +63,6 @@ public class RSA extends AppCompatActivity {
             public void onClick(View view) {
                 temp=input.getText().toString();
                 String encrypted = encryptRSAToString(temp, publicKeyBytesBase64);
-              //  Log.d("NIKHIL", "encrypt key:" +encrypted);
                 output.setText(encrypted);
                 tosend=encrypted;
             }
@@ -74,7 +73,6 @@ public class RSA extends AppCompatActivity {
             public void onClick(View view) {
                 temp=input.getText().toString();
                 String decrypted = decryptRSAToString(temp, privateKeyBytesBase64);
-            //    Log.d("NIKHIL", "encrypt key:" +decrypted);
 
                 output.setText(decrypted);
                 tosend=decrypted;
