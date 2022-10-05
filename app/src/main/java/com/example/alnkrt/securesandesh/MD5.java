@@ -1,4 +1,4 @@
-package com.example.loveb.securemessenger;
+package com.example.alnkrt.securesandesh;
 
 import android.content.Intent;
 import android.speech.RecognizerIntent;
@@ -67,7 +67,6 @@ public class MD5 extends AppCompatActivity {
                 // //and pehla character utha leta and builder me add krde
             }
             generatedPassword=sb.toString();
-            Log.d("BABBAR","generated password"+generatedPassword);
             return generatedPassword;
 
         }
